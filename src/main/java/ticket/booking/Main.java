@@ -36,6 +36,7 @@ public class Main {
             System.out.println("6. Cancel my Booking");
             System.out.println("7. Exit the App");
             option = scanner.nextInt();
+            Train trainSelectedForBooking = new Train();
             switch (option){
                 case 1:
                     System.out.println("Enter the username to signup");
@@ -66,6 +67,46 @@ public class Main {
                 case 3:
                     System.out.println("Fetching your bookings");
                     userBookingService.fetchBookings();
+                    break;
+                case 4:
+                    System.out.println("Type your source station");
+                    String source = scanner.next();
+                    System.out.println("Type your destination station");
+                    String dest = scanner.next();
+                    List<Train> trains = userBookingService.getTrains(source, dest);
+                    int index = 1;
+                    for (Train t: trains){
+                        System.out.println(index+" Train id : "+t.getTrainId());
+                        for (Map.Entry<String, String> entry: t.getStationTimes().entrySet()){
+                            System.out.println("station "+entry.getKey()+" time: "+entry.getValue());
+                        }
+                    }
+                    if(!trains.isEmpty()) {
+                        System.out.println("Select a train by typing 1,2,3...");
+                        trainSelectedForBooking = trains.get(scanner.nextInt());
+                    }
+                    break;
+                case 5:
+                    System.out.println("Select a seat out of these seats");
+                    List<List<Integer>> seats = userBookingService.fetchSeats(trainSelectedForBooking);
+                    for (List<Integer> row: seats){
+                        for (Integer val: row){
+                            System.out.print(val+" ");
+                        }
+                        System.out.println();
+                    }
+                    System.out.println("Select the seat by typing the row and column");
+                    System.out.println("Enter the row");
+                    int row = scanner.nextInt();
+                    System.out.println("Enter the column");
+                    int col = scanner.nextInt();
+                    System.out.println("Booking your seat....");
+                    Boolean booked = userBookingService.bookTrainSeat(trainSelectedForBooking, row, col);
+                    if(booked.equals(Boolean.TRUE)){
+                        System.out.println("Booked! Enjoy your journey");
+                    }else{
+                        System.out.println("Can't book this seat");
+                    }
                     break;
                 default:
                     break;

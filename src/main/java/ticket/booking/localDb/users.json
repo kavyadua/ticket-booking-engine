@@ -2,73 +2,47 @@
   {
     "name": "Developer",
     "password": "12345",
-    "hashedPassword": "$2a$10$MqonEcizso4Re9iFEMajHOIHCUd5O3Q.XZX779C50ZnC/Hb6mirwW",
-    "ticketsBooked": [
-      {
-        "ticketId": "your_ticket_id",
-        "userId": "abcdefgh",
-        "source": "Bangalore",
-        "destination": "Delhi",
-        "dateOfTravel": "2023-12-08T18:30:00Z",
-        "train": {
-          "trainId": "bacs",
-          "trainNo": "12345",
-          "seats": [
-            [
-              0,
-              0,
-              0,
-              0,
-              0,
-              0
-            ],
-            [
-              0,
-              0,
-              0,
-              0,
-              0,
-              0
-            ],
-            [
-              0,
-              0,
-              0,
-              0,
-              0,
-              0
-            ],
-            [
-              0,
-              0,
-              0,
-              0,
-              0,
-              0
-            ]
-          ],
-          "stationTimes": {
-            "Bangalore": "13:50:00",
-            "Jaipur": "13:50:00",
-            "Delhi": "13:50:00"
-          },
-          "stations": [
-            "Bangalore",
-            "Jaipur",
-            "Delhi"
-          ]
-        }
-      }
-    ],
-    "userId": null
+    "hashed_password": null,
+    "tickets_booked": null,
+    "user_id": null
   },
   {
     "name": "ABC",
     "password": "12345",
-    "hashedPassword": "$2a$10$noMLp4JzdVcymKO1bHTwHOkikRgOxylHIj62wPkcFIixi6aElZZo.",
-    "ticketsBooked": [
-
+    "hashed_password": null,
+    "tickets_booked": null,
+    "user_id": null
+  },
+  {
+    "name": "ABC2",
+    "password": "abc12345",
+    "hashed_password": "$2a$10$GrRvwU.DiAjL/aF5kcNaoepzBYZAuQnp6ZNId/5m69LSGIz89pmMS",
+    "tickets_booked": [
+      {
+        "ticket_id": "your_ticket_id",
+        "user_id": "abcdefgh",
+        "source": "Bangalore",
+        "destination": "Delhi",
+        "date_of_travel": "2023-12-08T18:30:00Z",
+        "train": {
+          "train_id": "bacs",
+          "train_no": "12345",
+          "seats": [
+            [0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0]
+          ],
+          "station_times": {
+            "Bangalore": "13:50:00",
+            "Jaipur": "13:50:00",
+            "Delhi": "13:50:00"
+          },
+          "stations": ["Bangalore", "Jaipur", "Delhi"],
+          "user_id": "3fa413a2-fe60-49f3-abb1-e5a099e4f9e2"
+        }
+      }
     ],
-    "userId": "f2d6e492-968c-4e37-a28d-a40a9db5d3bc"
+    "user_id": null
   }
 ]
